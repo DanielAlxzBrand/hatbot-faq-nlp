@@ -1,0 +1,65 @@
+# ════════════════════════════════════════════════════════════════
+# Hatbot FAQ con NLP — .gitignore
+# ════════════════════════════════════════════════════════════════
+
+# ── Entornos virtuales ───────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Python ───────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+build/
+dist/
+*.egg-info/
+
+# ── Claude Code — configuración local, nunca versionar ───────────
+.claude/
+
+# ── Documento fuente de embeddings — ya integrado en el JSON ─────
+Embeddings_HW_001_a_HW_015.pdf
+Embeddings_HW_001_a_HW_015.pdf.pdf
+
+# ── Dataset original de Kaggle ────────────────────────────────────
+# Decisión: SE VERSIONA COMPLETO (33MB, dentro del límite de GitHub).
+# Esta sección queda vacía intencionalmente — no excluir el CSV.
+
+# ── Datos generados (regenerables vía pipeline) ──────────────────
+data/processed/*.parquet
+data/processed/*.npz
+
+# ── Backups de la Knowledge Base ──────────────────────────────────
+# Generados por scripts/generalizar_kb.py y scripts/verificar_kb.py
+# No son la fuente de verdad — esa es hardware_knowledge_base.json
+data/custom/backups/
+
+# ── Modelos descargados (sentence-transformers cachea localmente) ─
+.cache/
+**/sentence-transformers/
+
+# ── Streamlit ─────────────────────────────────────────────────────
+.streamlit/secrets.toml
+
+# ── Variables de entorno y secretos ──────────────────────────────
+.env
+.env.local
+*.pem
+*.key
+
+# ── Sistema operativo ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Editores e IDEs ───────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+
+# ── Logs y testing ─────────────────────────────────────────────────
+*.log
+.pytest_cache/
+.coverage
